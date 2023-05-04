@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Home Page</title>
+</head>
+<body>
+  <div class="tabs is-centered">
+    <ul>
+      <li class="is-active" >
+      <li><a href="/">Home</a></li>
+      <li><a href="capsules">Capsules</a></li>
+      <li><a href="cores">Cores</a></li>
+      <li><a href="crew">Crew</a></li>
+      <li><a href="dragons">Dragons</a></li>
+      <li><a href="history">History</a></li>
+      <li><a href="landpads">Landpads</a></li>
+      <li><a href="launches">Launches</a></li>
+      <li><a href="launchpads">Launchpads</a></li>
+      <li><a href="payloads">Payloads</a></li>
+      <li><a href="roadster">Roadster</a></li>
+      <li><a href="rockets">Rockets</a></li>
+      <li><a href="ships">Ships</a></li>
+      <li><a href="starlink">Starlink</a></li>
+    </ul>
+  </div>
+    <h1><%= company.name %></h1> 
+    <p>Headquarters: <br>
+        <%= company.headquarters.address %> 
+        <br>
+        <%= company.headquarters.city %> 
+        <br>
+        <%= company.headquarters.state %>
+    </p>
+    <p>Links: <br>
+        <%= company.links.website %>
+        <br>
+        <%= company.links.flickr %>
+        <br>
+        <%= company.links.twitter %>
+        <br>
+        <%= company.links.elon_twitter %>
+    </p>
+    <p> <%= company.name %>
+        <br>
+        <%= company.founder %>
+        <br>
+        <%= company.founded %>
+        <br>
+        <%= company.employees %>
+        <br>
+        <%= company.vehicles %>
+        <br>
+        <%= company.launch_sites %>
+        <br>
+        <%= company.test_sites %>
+        <br>
+        <%= company.ceo %>
+        <br>
+        <%= company.cto %>
+        <br>
+        <%= company.coo %>
+        <br>
+        <%= company.cto_propulsion %>
+        <br>
+        <%= company.valuation %>
+        <br>
+        <%= company.summary %>
+    </p>
+    <div class="card">
+        <div class="card-content">
+          <p class="title">
+            SpaceX Links Below:
+          </p>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">
+            <span>
+              View on <a href="<%= company.links.website %>">Twitter</a>
+            </span>
+          </p>
+          <p class="card-footer-item">
+            <span>
+              View on <a href="<%= company.links.flickr %>">Flickr</a>
+            </span>
+          </p>
+          <p class="card-footer-item">
+            <span>
+                View <a href="<%= company.links.elon_twitter %>">Elon's Twitter</a>
+            </span>
+          </p>
+        </footer>
+      </div>
+    <article class="message is-primary">
+        <div class="message-header">
+          <p>Summary</p>
+          <button class="delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+          <%= company.summary %>
+        </div>
+    </article>
+    
+</body>
+</html>

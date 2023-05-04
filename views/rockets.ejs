@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Rockets</title>
+</head>
+<body>
+    <div class="tabs is-centered">
+        <ul>
+          <li class="is-active" >
+          <li><a href="/">Home</a></li>
+          <li><a href="capsules">Capsules</a></li>
+          <li><a href="cores">Cores</a></li>
+          <li><a href="crew">Crew</a></li>
+          <li><a href="dragons">Dragons</a></li>
+          <li><a href="history">History</a></li>
+          <li><a href="landpads">Landpads</a></li>
+          <li><a href="launches">Launches</a></li>
+          <li><a href="launchpads">Launchpads</a></li>
+          <li><a href="payloads">Payloads</a></li>
+          <li><a href="roadster">Roadster</a></li>
+          <li><a href="rockets">Rockets</a></li>
+          <li><a href="ships">Ships</a></li>
+          <li><a href="starlink">Starlink</a></li>
+        </ul>
+      </div>
+         <% for( let i = 0; i < rockets.length; i++ ) { 
+                let rocket = rockets[i]; %>
+            <article class="message is-danger">
+                <div class="message-header">
+                    <p><%= rocket.name %></p>
+                </div>
+                <div class="message-body">
+                    <p>Active: <%= rocket.active %></p>
+                    <br>
+                    <p>Country: <%= rocket.country %></p>
+                    <br>
+                    <p>Company: <%= rocket.company %></p>
+                    <a href="<%= rocket.wikipedia %>">Wikipedia</a>
+                    <br>
+                    <p>Images:</p>
+                    <br>
+                    <% for( let i = 0; i < rocket.flickr_images.length; i++ ) { %>
+                     <img src="<%= rocket.flickr_images[i] %>" alt=""> 
+                       <% } %>
+                </div>
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><abbr title="number">Number</abbr></th>
+                            <th><abbr title="Type">Type</abbr></th>
+                            <th><abbr title="propellant-1">Propellant 1</abbr></th>
+                            <th><abbr title="propellant-2">Propellant 2</abbr></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><%= rocket.engines.number %></td>
+                            <td><%= rocket.engines.type %></td>
+                            <td><%= rocket.engines.propellant_1 %></td>
+                            <td><%= rocket.engines.propellant_2 %></td>
+                        </tr>
+                    </tbody>
+            </article>
+    <% } %>
+</body>
+</html>

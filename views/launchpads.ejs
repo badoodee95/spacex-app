@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Launchpads</title>
+</head>
+<body>
+    <div class="tabs is-centered">
+        <ul>
+          <li class="is-active" >
+          <li><a href="/">Home</a></li>
+          <li><a href="capsules">Capsules</a></li>
+          <li><a href="cores">Cores</a></li>
+          <li><a href="crew">Crew</a></li>
+          <li><a href="dragons">Dragons</a></li>
+          <li><a href="history">History</a></li>
+          <li><a href="landpads">Landpads</a></li>
+          <li><a href="launches">Launches</a></li>
+          <li><a href="launchpads">Launchpads</a></li>
+          <li><a href="payloads">Payloads</a></li>
+          <li><a href="roadster">Roadster</a></li>
+          <li><a href="rockets">Rockets</a></li>
+          <li><a href="ships">Ships</a></li>
+          <li><a href="starlink">Starlink</a></li>
+        </ul>
+    </div>
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th><abbr title="id">Name</abbr></th>
+            <th><abbr title="full-name">Full Name</abbr></th>
+            <th>Locality</th>
+            <th><abbr title="region">Region</abbr></th>
+            <th><abbr title="latitude">Latitude</abbr></th>
+            <th><abbr title="longtitude">Longtitude</abbr></th>
+            <th><abbr title="launch-attempts">Launch Attempts</abbr></th>
+            <th><abbr title="launch-successes">Launch Successes</abbr></th>
+            <th><abbr title="timezone">Timezone</abbr></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for( let i = 0; i < launchpads.length; i++ ) { %>
+              <% let launchpad = launchpads[i] %>
+          <tr>
+            <td><%=  launchpad.name %></td>
+            <td><%= launchpad.full_name %></td>
+            <td><%= launchpad.locality %></td>
+            <td><%= launchpad.region %></td>
+            <td><%= launchpad.latitude %></td>
+            <td><%= launchpad.longitude %></td>
+            <td><%= launchpad.launch_attempts %></td>
+            <td><%= launchpad.launch_successes %></td>
+            <td><%= launchpad.timezone %></td>
+          </tr>
+          <% }; %>
+        </tbody>
+      </table>
+    
+</body>
+</html>

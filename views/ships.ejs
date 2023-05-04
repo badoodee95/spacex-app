@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Ships</title>
+</head>
+<body>
+    <div class="tabs is-centered">
+        <ul>
+          <li class="is-active" >
+          <li><a href="/">Home</a></li>
+          <li><a href="capsules">Capsules</a></li>
+          <li><a href="cores">Cores</a></li>
+          <li><a href="crew">Crew</a></li>
+          <li><a href="dragons">Dragons</a></li>
+          <li><a href="history">History</a></li>
+          <li><a href="landpads">Landpads</a></li>
+          <li><a href="launches">Launches</a></li>
+          <li><a href="launchpads">Launchpads</a></li>
+          <li><a href="payloads">Payloads</a></li>
+          <li><a href="roadster">Roadster</a></li>
+          <li><a href="rockets">Rockets</a></li>
+          <li><a href="ships">Ships</a></li>
+          <li><a href="starlink">Starlink</a></li>
+        </ul>
+      </div>
+      <% for( let i = 0; i < ships.length; i++ ) { 
+            let ship = ships[i]; %>
+      
+      
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong><%= ship.type %></strong> by <a href="https://jgthms.com"> <%= ship.name %> </a>. The ship was created by
+            <a href="<%= ship.link %> "><%= ship.home_port %></a>. The ship looks like...
+            <a href="<%= ship.link %> ">this</a>.
+          </p>
+        </div>
+      </footer>
+      <% } %>
+</body>
+</html>
